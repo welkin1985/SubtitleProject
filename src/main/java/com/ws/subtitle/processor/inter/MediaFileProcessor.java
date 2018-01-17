@@ -1,4 +1,4 @@
-package processor.inter;
+package com.ws.subtitle.processor.inter;
 
 public interface MediaFileProcessor {
 

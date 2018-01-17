@@ -1,4 +1,4 @@
-package util;
+package com.ws.subtitle.util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

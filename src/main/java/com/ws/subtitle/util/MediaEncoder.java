@@ -1,4 +1,4 @@
-package util;
+package com.ws.subtitle.util;
 
 import it.sauronsoftware.jave.Encoder;
 

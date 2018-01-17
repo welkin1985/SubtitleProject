@@ -1,4 +1,4 @@
-package util;
+package com.ws.subtitle.util;
 
 /**
  * Base64 工具类

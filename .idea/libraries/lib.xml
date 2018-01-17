@@ -6,6 +6,7 @@
     <JAVADOC />
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../jave-1.0.2-src.zip!/jave-1.0.2-src" />
+      <root url="jar://D:/lib&amp;src/jave-1.0.2-src.zip!/jave-1.0.2-src" />
     </SOURCES>
     <jarDirectory url="file://$PROJECT_DIR$/src/main/resources/lib" recursive="false" />
   </library>

@@ -1,4 +1,4 @@
-package processor.inter.impl;
+package com.ws.subtitle.processor.inter.impl;
 
 import java.awt.Graphics;
 import java.io.File;
@@ -9,7 +9,7 @@ import javax.sound.sampled.DataLine;
 import javax.sound.sampled.SourceDataLine;
 import javax.swing.*;
 
-import processor.inter.Wave2Picture;
+import com.ws.subtitle.processor.inter.Wave2Picture;
 
 public class Wave2PictureImpl extends javax.swing.JFrame implements Wave2Picture {
     private byte[] audioData = null;

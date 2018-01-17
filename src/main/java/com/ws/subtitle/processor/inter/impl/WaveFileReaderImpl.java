@@ -1,4 +1,4 @@
-package processor.inter.impl;
+package com.ws.subtitle.processor.inter.impl;
 
 import java.io.*;
 
@@ -78,14 +78,14 @@ public class WaveFileReaderImpl {
             bis = new BufferedInputStream(fis);
             this.chunkdescriptor = readString(lenchunkdescriptor);
             if (!chunkdescriptor.endsWith("RIFF"))
-                throw new IllegalArgumentException("RIFF miss, " + filename + " is not a wave file.");
+                throw new IllegalArgumentException("RIFF miss, " + filename + " is not a wave com.ws.subtitle.file.");
             this.chunksize = readLong();
             this.waveflag = readString(lenwaveflag);
             if (!waveflag.endsWith("WAVE"))
-                throw new IllegalArgumentException("WAVE miss, " + filename + " is not a wave file.");
+                throw new IllegalArgumentException("WAVE miss, " + filename + " is not a wave com.ws.subtitle.file.");
             this.fmtubchunk = readString(lenfmtubchunk);
             if (!fmtubchunk.endsWith("fmt "))
-                throw new IllegalArgumentException("fmt miss, " + filename + " is not a wave file.");
+                throw new IllegalArgumentException("fmt miss, " + filename + " is not a wave com.ws.subtitle.file.");
             this.subchunk1size = readLong();
             this.audioformat = readInt();
             this.numchannels = readInt();
@@ -95,7 +95,7 @@ public class WaveFileReaderImpl {
             this.bitspersample = readInt();
             this.datasubchunk = readString(lendatasubchunk);
             if (!datasubchunk.endsWith("data"))
-                throw new IllegalArgumentException("data miss, " + filename + " is not a wave file.");
+                throw new IllegalArgumentException("data miss, " + filename + " is not a wave com.ws.subtitle.file.");
             this.subchunk2size = readLong();
             this.len = (int) (this.subchunk2size / (this.bitspersample / 8) / this.numchannels);
             this.data = new int[this.numchannels][this.len];

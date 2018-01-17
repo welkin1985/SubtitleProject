@@ -1,4 +1,4 @@
-package file;
+package com.ws.subtitle.file;
 
 import java.io.*;
 import java.util.ArrayList;

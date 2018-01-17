@@ -1,8 +1,7 @@
-package file;
+package com.ws.subtitle.file;
 
 import it.sauronsoftware.jave.EncoderException;
-import processor.inter.MediaFileProcessor;
-import util.MediaEncoder;
+import com.ws.subtitle.util.MediaEncoder;
 
 import java.io.File;
 

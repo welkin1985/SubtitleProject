@@ -1,19 +1,13 @@
-package processor.inter.impl;
+package com.ws.subtitle.processor.inter.impl;
 
-import constant.ProjectConstant;
-import it.sauronsoftware.jave.AudioAttributes;
+import com.ws.subtitle.constant.ProjectConstant;
 import it.sauronsoftware.jave.Encoder;
 import it.sauronsoftware.jave.EncoderException;
 import it.sauronsoftware.jave.MultimediaInfo;
-import processor.inter.MediaFileProcessor;
+import com.ws.subtitle.processor.inter.MediaFileProcessor;
 
-import javax.sound.sampled.AudioFormat;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
 import java.io.*;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
 import java.util.Date;
 import java.util.List;
@@ -37,7 +31,7 @@ public class MediaFileProcessorImpl implements MediaFileProcessor {
      */
     public String saveAudioByTime(String videoPath, Long beginTime, Long endTime) {
 
-        videoPath = ProjectConstant.AUDIOFILEPATH;
+        videoPath = ProjectConstant.AUDIOFILE_PATH;
 
         try {
             MultimediaInfo multimediaInfo = encoder.getInfo(new File(videoPath));
@@ -55,8 +49,8 @@ public class MediaFileProcessorImpl implements MediaFileProcessor {
 
         //提取并转化按成pcm,并写入信息文件
         try (FileInputStream fileInputStream = new FileInputStream(videoPath);//读入路径
-             FileOutputStream fileOutputStream = new FileOutputStream(ProjectConstant.DEFAULTFILEPATH + audioFileName);//音频文件写出路径
-             FileWriter fileWriter = new FileWriter(ProjectConstant.DEFAULTFILEPATH + infoFileName)//信息文件写出路径
+             FileOutputStream fileOutputStream = new FileOutputStream(ProjectConstant.DEFAULT_FILEPATH + audioFileName);//音频文件写出路径
+             FileWriter fileWriter = new FileWriter(ProjectConstant.DEFAULT_FILEPATH + infoFileName)//信息文件写出路径
         ) {
 
             byte[] tempBytes = new byte[100];
@@ -75,7 +69,7 @@ public class MediaFileProcessorImpl implements MediaFileProcessor {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return ProjectConstant.DEFAULTFILEPATH + audioFileName;
+        return ProjectConstant.DEFAULT_FILEPATH + audioFileName;
     }
 
     public String getVideoType(String path) {

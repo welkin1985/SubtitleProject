@@ -1,4 +1,4 @@
-package file;
+package com.ws.subtitle.file;
 
 public class WavePicFile {
 }
